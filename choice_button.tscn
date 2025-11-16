@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://l0318x2q58od"]
+
+[ext_resource type="Script" uid="uid://bjpr3pdwuhhbg" path="res://buttonBehavior.gd" id="1_nme6o"]
+
+[node name="button1" type="Button"]
+anchors_preset = -1
+anchor_left = 0.35300002
+anchor_top = 0.5
+anchor_right = 0.64100003
+anchor_bottom = 0.591
+offset_left = 0.34399414
+offset_top = -7.0
+offset_right = -0.43188477
+offset_bottom = 0.031982422
+theme_override_font_sizes/font_size = 10
+text = "option 1"
+script = ExtResource("1_nme6o")
+metadata/_edit_use_anchors_ = true
+metadata/complex = ""
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
