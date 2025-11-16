@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://cykcebp1sla2e"]
+[gd_scene load_steps=11 format=4 uid="uid://cykcebp1sla2e"]
 
 [ext_resource type="Texture2D" uid="uid://cjqbecsbxaw28" path="res://oak_woods_tileset.png" id="1_epypp"]
 [ext_resource type="Script" uid="uid://cgn0ksy4bmc25" path="res://player.gd" id="2_0hol4"]
 [ext_resource type="Texture2D" uid="uid://dd08im2cf8xxw" path="res://icon.svg" id="3_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://bt40jbmnamck8" path="res://tempCityBg.png" id="4_0hol4"]
+[ext_resource type="Script" uid="uid://b41aldu7keyah" path="res://situation.gd" id="5_q6r6c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdubu"]
 texture = ExtResource("1_epypp")
@@ -419,10 +421,16 @@ sources/0 = SubResource("TileSetAtlasSource_kdubu")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rj586"]
 size = Vector2(22, 20.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(70, 125.05069)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
+size = Vector2(15, 20)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAABAAAAAAAkABQAAAAEAAAAAAAkABQAAAAGAAAAAAAkABQAAAAJAAAAAAAkABQAAAAMAAAAAAAkABQAAAAPAAAAAAAkABQAAAASAAAAAAAkABQAAAAVAAAAAAAkABQAAAAZAAAAAAAkABQAAAAYAAAAAAAkABQAAAAcAAAAAAAkABQAAAAfAAAAAAAkABQAAAA=")
+tile_map_data = PackedByteArray("AAABAAAAAAAkABQAAAAEAAAAAAAkABQAAAAGAAAAAAAkABQAAAAJAAAAAAAkABQAAAAMAAAAAAAkABQAAAAPAAAAAAAkABQAAAASAAAAAAAkABQAAAAVAAAAAAAkABQAAAAZAAAAAAAkABQAAAAYAAAAAAAkABQAAAAcAAAAAAAkABQAAAAfAAAAAAAkABQAAAAiAAAAAAAkABQAAAAlAAAAAAAkABQAAAAoAAAAAAAkABQAAAApAAAAAAAkABQAAAAqAAAAAAAkABQAAAArAAAAAAAkABQAAAAsAAAAAAAkABQAAAAvAAAAAAAkABQAAAAyAAAAAAAkABQAAAAzAAAAAAAkABQAAAA0AAAAAAAkABQAAAA1AAAAAAAkABQAAAA2AAAAAAAkABQAAAA3AAAAAAAkABQAAAA4AAAAAAAkABQAAAA5AAAAAAAkABQAAAA6AAAAAAAkABQAAAA7AAAAAAAkABQAAAA8AAAAAAAkABQAAAA9AAAAAAAkABQAAAA+AAAAAAAkABQAAAA/AAAAAAAkABQAAABAAAAAAAAkABQAAABBAAAAAAAkABQAAABCAAAAAAAkABQAAABDAAAAAAAkABQAAABEAAAAAAAkABQAAABHAAAAAAAkABQAAABKAAAAAAAkABQAAABNAAAAAAAkABQAAABQAAAAAAAkABQAAABTAAAAAAAkABQAAABWAAAAAAAkABQAAABZAAAAAAAkABQAAABcAAAAAAAkABQAAABfAAAAAAAkABQAAAA=")
 tile_set = SubResource("TileSet_d21ai")
 
 [node name="player" type="CharacterBody2D" parent="."]
@@ -430,14 +438,43 @@ position = Vector2(6, -9)
 script = ExtResource("2_0hol4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(6, -6)
+position = Vector2(116.25, -5.749996)
 shape = SubResource("RectangleShape2D_rj586")
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
-position = Vector2(5.9999995, -6.000002)
+position = Vector2(116.250015, -5.749998)
 scale = Vector2(0.17578125, 0.16015626)
 texture = ExtResource("3_q6r6c")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(116, -40)
 zoom = Vector2(4.74, 4.74)
+limit_left = 0
+
+[node name="city" type="Parallax2D" parent="."]
+z_index = -2
+repeat_size = Vector2(360, 202.5)
+repeat_times = 20
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="city"]
+position = Vector2(180, -106.00001)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_0hol4")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="city"]
+color = Color(0.27833876, 0.28037733, 0.20597425, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-36, -107)
+scale = Vector2(1, 1.6953125)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(261.5, -18)
+shape = SubResource("RectangleShape2D_kdubu")
+script = ExtResource("5_q6r6c")
