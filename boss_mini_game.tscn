@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=4 uid="uid://d2yqgj7a0ss43"]
+[gd_scene load_steps=12 format=4 uid="uid://d2yqgj7a0ss43"]
 
+[ext_resource type="Script" uid="uid://doeogaww1xbow" path="res://inferiority_boss.gd" id="1_2u8in"]
+[ext_resource type="Texture2D" uid="uid://p2wc8b8r4spb" path="res://sky.jpg" id="1_7tjd0"]
 [ext_resource type="PackedScene" uid="uid://qbo8n4j5y76b" path="res://inferiority_boss.tscn" id="1_cw63b"]
 [ext_resource type="Texture2D" uid="uid://cjqbecsbxaw28" path="res://oak_woods_tileset.png" id="1_mcga0"]
 [ext_resource type="PackedScene" uid="uid://ba5hvp3dt4bvk" path="res://player.tscn" id="3_86imt"]
+[ext_resource type="Script" uid="uid://ddoefnlbl8kc7" path="res://teardrops.gd" id="5_mhw36"]
+[ext_resource type="Texture2D" uid="uid://dkhbbhrn8wb8i" path="res://assets/textures/teardrop.png" id="5_tefjk"]
+[ext_resource type="Texture2D" uid="uid://bore77puv66cv" path="res://assets/textures/heart.png" id="8_vx5mm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cw63b"]
 texture = ExtResource("1_mcga0")
@@ -418,16 +423,104 @@ texture_region_size = Vector2i(9, 8)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_cw63b")
 
-[node name="boss mini game" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tjd0"]
+size = Vector2(9, 226)
+
+[node name="inferiorityBossGame" type="Node2D"]
+script = ExtResource("1_2u8in")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+autoscroll = Vector2(10, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(273, -117)
+scale = Vector2(0.288, 0.315)
+texture = ExtResource("1_7tjd0")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Parallax2D"]
+color = Color(0.4999556, 0.51068676, 0.31420207, 1)
 
 [node name="guilt boss" parent="." instance=ExtResource("1_cw63b")]
 z_index = 1
 position = Vector2(96, -94)
+script = null
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(0, -1)
-tile_map_data = PackedByteArray("AAABAAAAAAAgABgAAAADAAAAAAAgABgAAAAFAAAAAAAgABgAAAAHAAAAAAAgABgAAAAJAAAAAAAgABgAAAALAAAAAAAgABgAAAANAAAAAAAgABgAAAAPAAAAAAAgABgAAAARAAAAAAAgABgAAAATAAAAAAAgABgAAAAKAP//AAAAAB4AAAAPAP//AAAAAB4AAAAFAP//AAAAAB4AAAACAP//AAAAAB4AAAASAP//AAAAAB4AAAAHAP7/AAAAAB4AAAAMAP7/AAAAAB4AAAAPAP7/AAAAAB4AAAAFAP7/AAAAAB4AAAAHAP3/AAAAAB4AAAALAP3/AAAAAB4AAAANAP3/AAAAAB4AAAAMAPz/AAAAAB4AAAAIAPz/AAAAAB4AAAAIAPv/AAAAAB4AAAAMAPv/AAAAAB4AAAAIAPr/AAAAAB4AAAAMAPr/AAAAAB4AAAAIAPn/AAAAAB4AAAAMAPn/AAAAAB4AAAAJAPj/AAAAAB4AAAALAPj/AAAAAB4AAAAOAP3/AAAAAB4AAAAGAP3/AAAAAB4AAAANAPz/AAAAAB4AAAAHAPz/AAAAAB4AAAANAPv/AAAAAB4AAAAHAPv/AAAAAB4AAAA=")
+tile_map_data = PackedByteArray("AAABAAAAAAAgABgAAAADAAAAAAAgABgAAAAFAAAAAAAgABgAAAAHAAAAAAAgABgAAAAJAAAAAAAgABgAAAALAAAAAAAgABgAAAANAAAAAAAgABgAAAAPAAAAAAAgABgAAAARAAAAAAAgABgAAAATAAAAAAAgABgAAAAKAP//AAAAAB4AAAAPAP//AAAAAB4AAAAFAP//AAAAAB4AAAACAP//AAAAAB4AAAASAP//AAAAAB4AAAAHAP7/AAAAAB4AAAAMAP7/AAAAAB4AAAAPAP7/AAAAAB4AAAAFAP7/AAAAAB4AAAAHAP3/AAAAAB4AAAALAP3/AAAAAB4AAAANAP3/AAAAAB4AAAAMAPz/AAAAAB4AAAAIAPz/AAAAAB4AAAAIAPv/AAAAAB4AAAAMAPv/AAAAAB4AAAAIAPr/AAAAAB4AAAAMAPr/AAAAAB4AAAAIAPn/AAAAAB4AAAAMAPn/AAAAAB4AAAAJAPj/AAAAAB4AAAALAPj/AAAAAB4AAAAOAP3/AAAAAB4AAAAGAP3/AAAAAB4AAAANAPz/AAAAAB4AAAAHAPz/AAAAAB4AAAANAPv/AAAAAB4AAAAHAPv/AAAAAB4AAAAWAAAAAAAgABgAAAAVAAAAAAAgABgAAAAZAAAAAAAgABgAAAAYAAAAAAAgABgAAAAaAAAAAAAgABgAAAAbAAAAAAAgABgAAAAcAAAAAAAgABgAAAAdAAAAAAAgABgAAAA=")
 tile_set = SubResource("TileSet_86imt")
 
 [node name="player" parent="." instance=ExtResource("3_86imt")]
 position = Vector2(3, -8)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-5.5, -103)
+shape = SubResource("RectangleShape2D_7tjd0")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(419, -105)
+shape = SubResource("RectangleShape2D_7tjd0")
+
+[node name="teardrops" type="Area2D" parent="."]
+position = Vector2(46, -500)
+script = ExtResource("5_mhw36")
+
+[node name="Sprite2D" type="Sprite2D" parent="teardrops"]
+position = Vector2(-4.2750015, -9.059999)
+scale = Vector2(0.068450175, 0.047233272)
+texture = ExtResource("5_tefjk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="teardrops"]
+position = Vector2(-4.347223, -8.500016)
+scale = Vector2(0.6944443, 0.6398815)
+polygon = PackedVector2Array(-1, -21, -12, 5, -13, 8, -12, 15, -5, 21, 3, 21, 10, 19, 13, 13, 14, 7, 7, -6, 1, -19)
+
+[node name="speed" type="Timer" parent="teardrops"]
+wait_time = 0.05
+autostart = true
+
+[node name="lifetime" type="Timer" parent="teardrops"]
+wait_time = 5.0
+one_shot = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+
+[node name="heart1" type="TextureRect" parent="Control/CanvasLayer"]
+offset_left = 5.9999995
+offset_top = 5.9999995
+offset_right = 343.0
+offset_bottom = 343.0
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("8_vx5mm")
+
+[node name="heart2" type="TextureRect" parent="Control/CanvasLayer"]
+offset_left = 33.0
+offset_top = 6.0
+offset_right = 370.0
+offset_bottom = 343.0
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("8_vx5mm")
+
+[node name="heart3" type="TextureRect" parent="Control/CanvasLayer"]
+offset_left = 60.0
+offset_top = 6.0
+offset_right = 397.0
+offset_bottom = 343.0
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("8_vx5mm")
+
+[connection signal="body_entered" from="teardrops" to="." method="_on_teardrops_body_entered"]

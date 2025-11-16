@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pmrjtuha4c1f"
-path="res://.godot/imported/textselectcursor.png-28508e512e2d60e5ff3f90e607f5afab.ctex"
+uid="uid://dkhbbhrn8wb8i"
+path="res://.godot/imported/teardrop.png-b7ff2e02cc8557b0e5e212f19a87e2f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/textselectcursor.png"
-dest_files=["res://.godot/imported/textselectcursor.png-28508e512e2d60e5ff3f90e607f5afab.ctex"]
+source_file="res://assets/textures/teardrop.png"
+dest_files=["res://.godot/imported/teardrop.png-b7ff2e02cc8557b0e5e212f19a87e2f3.ctex"]
 
 [params]
 
