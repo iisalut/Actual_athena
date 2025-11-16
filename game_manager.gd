@@ -76,13 +76,18 @@ var max = 9
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_situation()
+	#_situation()
+	choice.visible = false
 	
+@onready var choice = get_node("/root/Node2D/uis/choice")
 @onready var situationTxt = get_node('/root/Node2D/uis/choice/decisionText')
 @onready var choice1 = get_node("/root/Node2D/uis/choice/button1")
 @onready var choice2 = get_node("/root/Node2D/uis/choice/button2")
 @onready var choice3 = get_node("/root/Node2D/uis/choice/button3")
 @onready var img = get_node("/root/Node2D/uis/choice/TextureRect")
+@onready var trigger = get_node("/root/Node2D/RigidBody2D/CollisionShape2D")
+@onready var player: CharacterBody2D = $player
+@onready var rigid_body_2d: RigidBody2D = $RigidBody2D
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -90,8 +95,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _situation():
-	#var index = randi_range(0, max)
-	var index = 7
+	var index = randi_range(0, max)
 
 	situationTxt.text = array[index][0]
 	img.texture = load(array[index][4])

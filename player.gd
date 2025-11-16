@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 200.0
 const JUMP_VELOCITY = -200.0
 @onready var uis: Control = $"../uis"
+var cutsceneTriggered = false
 
 @onready var ap= $AnimationPlayer
 @onready var sprite= $Sprite2D

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvidsgxgkwu2a"]
+[gd_scene load_steps=4 format=3 uid="uid://bvidsgxgkwu2a"]
 
 [ext_resource type="Script" uid="uid://be43np6oy5v66" path="res://decision_text.gd" id="1_re2j4"]
+[ext_resource type="Texture2D" uid="uid://dir6ag4lrosnc" path="res://blackbg.png" id="2_fmanu"]
 [ext_resource type="PackedScene" uid="uid://l0318x2q58od" path="res://choice_button.tscn" id="2_re2j4"]
 
 [node name="uis" type="Control"]
@@ -22,12 +23,19 @@ grow_vertical = 2
 expand_mode = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="TextureRect2" type="TextureRect" parent="choice"]
+offset_top = 18.0
+offset_right = 1152.0
+offset_bottom = 218.0
+texture = ExtResource("2_fmanu")
+expand_mode = 1
+
 [node name="decisionText" type="Label" parent="choice"]
-offset_left = 3.0
-offset_top = 54.0
-offset_right = 1148.0
-offset_bottom = 288.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.70980394)
+offset_left = 37.0
+offset_top = 43.0
+offset_right = 1182.0
+offset_bottom = 277.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.95686275)
 text = "asdhflkasjdlkfjasdf"
 autowrap_mode = 3
 script = ExtResource("1_re2j4")
