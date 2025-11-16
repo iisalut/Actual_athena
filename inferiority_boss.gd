@@ -7,6 +7,7 @@ extends Node2D
 @onready var heart2 = get_node("Control/CanvasLayer/heart2")
 @onready var heart1 = get_node("Control/CanvasLayer/heart1")
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	timer.timeout.connect(_on_timeout)
@@ -30,6 +31,6 @@ func _on_teardrops_body_entered(body: Node2D) -> void: #player health and hearts
 		heart2.visible = false
 	elif(player.health==1):
 		heart1.visible = false
-	else:
+	elif(player.health==0):
 		print("GAME OVER sighh")
 	player.health-=1
