@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvidsgxgkwu2a"]
+
+[ext_resource type="Texture2D" uid="uid://dir6ag4lrosnc" path="res://blackbg.png" id="1_re2j4"]
+[ext_resource type="Script" uid="uid://bjpr3pdwuhhbg" path="res://buttonBehavior.gd" id="2_fmanu"]
+
+[node name="uis" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="choice" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="choice"]
+offset_right = 3840.0
+offset_bottom = 2160.0
+texture = ExtResource("1_re2j4")
+
+[node name="Label" type="Label" parent="choice"]
+offset_left = 3.0
+offset_top = 54.0
+offset_right = 1148.0
+offset_bottom = 288.0
+theme_override_font_sizes/font_size = 30
+text = "asdhflkasjdlkfjasdf"
+horizontal_alignment = 1
+
+[node name="button1" type="Button" parent="choice"]
+anchors_preset = -1
+anchor_left = 0.35300002
+anchor_top = 0.5
+anchor_right = 0.64100003
+anchor_bottom = 0.591
+offset_left = 0.34399414
+offset_top = -7.0
+offset_right = -0.43188477
+offset_bottom = 0.031982422
+text = "option 1"
+script = ExtResource("2_fmanu")
+
+[node name="button2" type="Button" parent="choice"]
+anchors_preset = -1
+anchor_left = 0.35500002
+anchor_top = 0.63600004
+anchor_right = 0.64100003
+anchor_bottom = 0.73800004
+offset_left = 0.039978027
+offset_top = -0.12802124
+offset_right = 1.5681763
+offset_bottom = -0.22399902
+text = "option 2"
+script = ExtResource("2_fmanu")
+
+[node name="button3" type="Button" parent="choice"]
+anchors_preset = -1
+anchor_left = 0.35500002
+anchor_top = 0.78200006
+anchor_right = 0.642
+anchor_bottom = 0.88400006
+offset_left = 0.039978027
+offset_top = 0.26394653
+offset_right = 0.41607666
+offset_bottom = 0.16796875
+text = "option 3"
+script = ExtResource("2_fmanu")

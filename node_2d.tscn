@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://cykcebp1sla2e"]
+[gd_scene load_steps=12 format=4 uid="uid://cykcebp1sla2e"]
 
 [ext_resource type="Texture2D" uid="uid://cjqbecsbxaw28" path="res://oak_woods_tileset.png" id="1_epypp"]
 [ext_resource type="Script" uid="uid://cgn0ksy4bmc25" path="res://player.gd" id="2_0hol4"]
 [ext_resource type="Texture2D" uid="uid://dd08im2cf8xxw" path="res://icon.svg" id="3_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://bt40jbmnamck8" path="res://tempCityBg.png" id="4_0hol4"]
 [ext_resource type="Script" uid="uid://b41aldu7keyah" path="res://situation.gd" id="5_q6r6c"]
+[ext_resource type="PackedScene" uid="uid://bvidsgxgkwu2a" path="res://uis.tscn" id="6_kdubu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdubu"]
 texture = ExtResource("1_epypp")
@@ -478,3 +479,5 @@ shape = SubResource("RectangleShape2D_0hol4")
 position = Vector2(261.5, -18)
 shape = SubResource("RectangleShape2D_kdubu")
 script = ExtResource("5_q6r6c")
+
+[node name="uis" parent="." instance=ExtResource("6_kdubu")]
