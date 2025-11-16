@@ -478,6 +478,12 @@ shape = SubResource("RectangleShape2D_0hol4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(261.5, -18)
 shape = SubResource("RectangleShape2D_kdubu")
+debug_color = Color(1, 1, 1, 1)
 script = ExtResource("5_q6r6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(261.375, -18)
+scale = Vector2(0.11914053, 0.15624994)
+texture = ExtResource("3_q6r6c")
 
 [node name="uis" parent="." instance=ExtResource("6_kdubu")]

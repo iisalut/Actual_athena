@@ -39,6 +39,7 @@ offset_right = -0.43188477
 offset_bottom = 0.031982422
 text = "option 1"
 script = ExtResource("2_fmanu")
+metadata/complex = ""
 
 [node name="button2" type="Button" parent="choice"]
 anchors_preset = -1
@@ -52,6 +53,7 @@ offset_right = 1.5681763
 offset_bottom = -0.22399902
 text = "option 2"
 script = ExtResource("2_fmanu")
+metadata/complex = ""
 
 [node name="button3" type="Button" parent="choice"]
 anchors_preset = -1
@@ -65,3 +67,4 @@ offset_right = 0.41607666
 offset_bottom = 0.16796875
 text = "option 3"
 script = ExtResource("2_fmanu")
+metadata/complex = ""
