@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=4 uid="uid://bo8xdrldhh40l"]
+
+[ext_resource type="Texture2D" uid="uid://fck6polpfhxv" path="res://assets/textures/Swamp.png" id="1_2hml7"]
+[ext_resource type="PackedScene" uid="uid://vtckl2187tbi" path="res://blob.tscn" id="2_l40py"]
+[ext_resource type="PackedScene" uid="uid://ba5hvp3dt4bvk" path="res://player.tscn" id="3_pwq2t"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l40py"]
+texture = ExtResource("1_2hml7")
+texture_region_size = Vector2i(15, 16)
+19:13/size_in_atlas = Vector2i(3, 1)
+19:13/0 = 0
+19:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-22.496094, -8.390533, 22.216396, -8.206532, 22.768398, 8.169647, -22.496094, 7.6176414)
+19:14/size_in_atlas = Vector2i(3, 1)
+19:14/0 = 0
+19:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-22.496094, -8.390533, 22.216396, -8.206532, 22.768398, 8.169647, -22.496094, 7.6176414)
+19:17/size_in_atlas = Vector2i(2, 1)
+19:17/0 = 0
+19:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:20/size_in_atlas = Vector2i(1, 2)
+19:20/0 = 0
+19:20/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.062408, -8.316943, 13.825905, -7.3969326, 13.825905, -7.2129307, 14.561916, -5.3729115, 14.92992, 8.243238, -15.246412, 7.6912327)
+8:0/size_in_atlas = Vector2i(8, 7)
+8:0/0 = 0
+16:2/size_in_atlas = Vector2i(3, 2)
+16:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_pwq2t"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_l40py")
+
+[node name="persecution_boss_game" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAANAP//AAATAA4AAAAPAP//AAATAA4AAAARAP//AAATAA4AAAATAP//AAATAA4AAAAVAP//AAATAA4AAAAWAPv/AAAIAAAAAAAUAP7/AAAQAAIAAAATAP7/AAAQAAIAAAABAP//AAATABEAAAAEAP//AAATABEAAAAHAP//AAATABEAAAA=")
+tile_set = SubResource("TileSet_pwq2t")
+
+[node name="blob" parent="." instance=ExtResource("2_l40py")]
+position = Vector2(196, -8)
+
+[node name="player" parent="." instance=ExtResource("3_pwq2t")]
+position = Vector2(3, -8)
