@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvidsgxgkwu2a"]
 
-[ext_resource type="Texture2D" uid="uid://dir6ag4lrosnc" path="res://blackbg.png" id="1_re2j4"]
+[ext_resource type="Script" uid="uid://be43np6oy5v66" path="res://decision_text.gd" id="1_re2j4"]
 [ext_resource type="PackedScene" uid="uid://l0318x2q58od" path="res://choice_button.tscn" id="2_re2j4"]
 
 [node name="uis" type="Control"]
@@ -14,9 +14,12 @@ grow_vertical = 2
 [node name="choice" type="CanvasLayer" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="choice"]
-offset_right = 3840.0
-offset_bottom = 2160.0
-texture = ExtResource("1_re2j4")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="decisionText" type="Label" parent="choice"]
@@ -24,8 +27,10 @@ offset_left = 3.0
 offset_top = 54.0
 offset_right = 1148.0
 offset_bottom = 288.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.70980394)
 text = "asdhflkasjdlkfjasdf"
 autowrap_mode = 3
+script = ExtResource("1_re2j4")
 metadata/_edit_use_anchors_ = true
 
 [node name="button1" parent="choice" instance=ExtResource("2_re2j4")]
