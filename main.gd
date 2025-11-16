@@ -106,12 +106,12 @@ func _process(delta: float) -> void:
 			persecution+=1
 		holder.madeDecision = "none"
 		print(guilt, inferiority, superiority, martyr, persecution)
-	if(holder.sceneTriggered==true):
+	if(holder.sceneTriggered==true and index<10):
 		_situation()
 		holder.sceneTriggered=false
 
 func _situation():
-	if(index<8):
+	if(index<10):
 		situationTxt.text = array[index][0]
 		img.texture = load(array[index][4])
 		choice1.text = array[index][1][0]
@@ -123,6 +123,7 @@ func _situation():
 		index+=1
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	choice.visible = true
-	area2d.position.x += 650
-	_situation()
+	if(index<10):
+		choice.visible = true
+		area2d.position.x += 100
+		_situation()

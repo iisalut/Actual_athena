@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b2tcbtlt6dham"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+
+[node name="Label" type="Label" parent="Control/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "This was SUPPOSED to be martyr (an angel statue, we had it all planned out) but we didn't have enough time to implement it"
