@@ -11,3 +11,4 @@ func _ready() -> void:
 func _on_pressed() -> void:
 	canvas.visible = false
 	holder.madeDecision = complex
+	

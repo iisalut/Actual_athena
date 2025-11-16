@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvidsgxgkwu2a"]
+[gd_scene load_steps=7 format=3 uid="uid://bvidsgxgkwu2a"]
 
 [ext_resource type="Script" uid="uid://be43np6oy5v66" path="res://decision_text.gd" id="1_re2j4"]
 [ext_resource type="Texture2D" uid="uid://dir6ag4lrosnc" path="res://blackbg.png" id="2_fmanu"]
 [ext_resource type="PackedScene" uid="uid://l0318x2q58od" path="res://choice_button.tscn" id="2_re2j4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmanu"]
+bg_color = Color(0.0768358, 0.07683582, 0.076835774, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdftq"]
+bg_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3etvp"]
+bg_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 
 [node name="uis" type="Control"]
 layout_mode = 3
@@ -42,13 +51,29 @@ script = ExtResource("1_re2j4")
 metadata/_edit_use_anchors_ = true
 
 [node name="button1" parent="choice" instance=ExtResource("2_re2j4")]
+anchor_left = 0.33600003
+anchor_right = 0.74300003
+anchor_bottom = 0.59562963
+offset_left = -1.0720215
+offset_top = -6.0
+offset_right = -0.93603516
+offset_bottom = 1.0319824
+theme_override_styles/normal = SubResource("StyleBoxFlat_fmanu")
 
 [node name="button2" parent="choice" instance=ExtResource("2_re2j4")]
-offset_left = 4.343994
-offset_top = 76.0
-offset_right = 3.5681152
-offset_bottom = 83.03198
+anchor_left = 0.34605557
+anchor_right = 0.752111
+offset_left = -13.656006
+offset_top = 77.0
+offset_right = -14.431885
+offset_bottom = 84.03198
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdftq")
 
 [node name="button3" parent="choice" instance=ExtResource("2_re2j4")]
-offset_top = 159.0
-offset_bottom = 166.03198
+anchor_left = 0.34345138
+anchor_right = 0.74950683
+offset_left = -8.656006
+offset_top = 160.0
+offset_right = -9.431885
+offset_bottom = 167.03198
+theme_override_styles/normal = SubResource("StyleBoxFlat_3etvp")
