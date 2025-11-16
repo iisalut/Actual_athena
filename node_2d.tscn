@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cgn0ksy4bmc25" path="res://player.gd" id="2_0hol4"]
 [ext_resource type="Texture2D" uid="uid://dd08im2cf8xxw" path="res://icon.svg" id="3_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://bt40jbmnamck8" path="res://tempCityBg.png" id="4_0hol4"]
-[ext_resource type="Script" uid="uid://b41aldu7keyah" path="res://situation.gd" id="5_q6r6c"]
+[ext_resource type="Script" uid="uid://c8i6502aou0ip" path="res://holder.gd" id="6_d21ai"]
 [ext_resource type="PackedScene" uid="uid://bvidsgxgkwu2a" path="res://uis.tscn" id="6_kdubu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdubu"]
@@ -425,8 +425,7 @@ size = Vector2(22, 20.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(70, 125.05069)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
-size = Vector2(15, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -475,15 +474,17 @@ position = Vector2(-36, -107)
 scale = Vector2(1, 1.6953125)
 shape = SubResource("RectangleShape2D_0hol4")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-script = ExtResource("5_q6r6c")
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(261.5, -18)
-shape = SubResource("RectangleShape2D_kdubu")
-debug_color = Color(1, 1, 1, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_q6r6c")
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-position = Vector2(261.375, -18)
-scale = Vector2(0.11914053, 0.15624994)
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(194, -22)
+scale = Vector2(0.1640626, 0.25)
 texture = ExtResource("3_q6r6c")
+
+[node name="holder" type="Sprite2D" parent="."]
+script = ExtResource("6_d21ai")
+
+[connection signal="area_entered" from="Area2D" to="player" method="_on_area_2d_area_entered"]

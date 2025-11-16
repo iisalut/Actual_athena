@@ -72,7 +72,7 @@ var array = [
 	]
 ]
 
-var max = 9
+var index = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -88,20 +88,33 @@ func _ready() -> void:
 @onready var trigger = get_node("/root/Node2D/RigidBody2D/CollisionShape2D")
 @onready var player: CharacterBody2D = $player
 @onready var rigid_body_2d: RigidBody2D = $RigidBody2D
+@onready var holder = get_node("/root/Node2D/holder")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if(holder.madeDecision!="none"):
+		if(holder.madeDecision == "guilt"):
+			guilt+=1
+		elif(holder.madeDecision == "inferiority"):
+			inferiority+=1
+		elif(holder.madeDecision == "superiority"):
+			superiority+=1
+		elif(holder.madeDecision == "martyr"):
+			martyr+=1
+		elif(holder.madeDecision == "persecution"):
+			persecution+=1
+		holder.madeDecision = "none"
+		print(guilt, inferiority, superiority, martyr, persecution)
 
 func _situation():
-	var index = randi_range(0, max)
-
-	situationTxt.text = array[index][0]
-	img.texture = load(array[index][4])
-	choice1.text = array[index][1][0]
-	choice1.complex = array[index][1][1]
-	choice2.text = array[index][2][0]
-	choice2.complex = array[index][2][1]
-	choice3.text = array[index][3][0]
-	choice3.complex =  array[index][3][1]
+	if(index<10):
+		situationTxt.text = array[index][0]
+		img.texture = load(array[index][4])
+		choice1.text = array[index][1][0]
+		choice1.complex = array[index][1][1]
+		choice2.text = array[index][2][0]
+		choice2.complex = array[index][2][1]
+		choice3.text = array[index][3][0]
+		choice3.complex =  array[index][3][1]
+		index+=1
