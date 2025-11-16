@@ -131,8 +131,8 @@ hframes = 8
 vframes = 6
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(116, -40)
-zoom = Vector2(4.74, 4.74)
+position = Vector2(115, -91)
+zoom = Vector2(2.78, 2.78)
 limit_left = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

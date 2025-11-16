@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 
 
-@onready var gb=$AnimatedSprite2D.play("idle")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
