@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cgn0ksy4bmc25" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://ds5hhff3tjq80" path="res://assets/textures/AnimationSheet.png" id="2_onrkg"]
-[ext_resource type="AudioStream" uid="uid://yyojp14da5et" path="res://athena_game_ost_main.ogg" id="3_i3pqv"]
+[ext_resource type="AudioStream" uid="uid://drd7ujo145m7y" path="res://mr_skully_bones_doo_doo.ogg" id="3_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rj586"]
 size = Vector2(15, 20)

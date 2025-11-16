@@ -125,5 +125,5 @@ func _situation():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(index<10):
 		choice.visible = true
-		area2d.position.x += 100
+		area2d.position.x += 500
 		_situation()

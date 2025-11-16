@@ -450,7 +450,7 @@ position = Vector2(-1, -5)
 shape = SubResource("RectangleShape2D_kdubu")
 
 [node name="Area2D2" type="Area2D" parent="."]
-position = Vector2(1214, 0)
+position = Vector2(4814, 0)
 script = ExtResource("7_d21ai")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]

@@ -33,8 +33,8 @@ expand_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="choice"]
-offset_top = 18.0
-offset_right = 1152.0
+offset_top = -8.0
+offset_right = 1224.0
 offset_bottom = 218.0
 texture = ExtResource("2_fmanu")
 expand_mode = 1
