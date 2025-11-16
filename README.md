@@ -1,4 +1,4 @@
-Complexes
+Complexes:
 This is a platformer/ visual novel game where you get to walk down the streets of new york and you have to make a series of decisions which may or may not change your out come !!
 Why did we make this game ?
 We wanted to challenge ourselves by coding with a completely new language, Godot. We also wanted to create a meaningful game that resonated with both of us and also related to NYC.
