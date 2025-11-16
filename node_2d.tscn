@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=4 uid="uid://cykcebp1sla2e"]
+[gd_scene load_steps=11 format=4 uid="uid://cykcebp1sla2e"]
 
 [ext_resource type="Texture2D" uid="uid://cjqbecsbxaw28" path="res://oak_woods_tileset.png" id="1_epypp"]
-[ext_resource type="Script" uid="uid://cgn0ksy4bmc25" path="res://player.gd" id="2_0hol4"]
+[ext_resource type="PackedScene" uid="uid://ba5hvp3dt4bvk" path="res://player.tscn" id="3_kdubu"]
 [ext_resource type="Texture2D" uid="uid://dd08im2cf8xxw" path="res://icon.svg" id="3_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://bt40jbmnamck8" path="res://tempCityBg.png" id="4_0hol4"]
 [ext_resource type="Script" uid="uid://c8i6502aou0ip" path="res://holder.gd" id="6_d21ai"]
@@ -419,9 +419,6 @@ texture_region_size = Vector2i(8, 12)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_kdubu")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj586"]
-size = Vector2(22, 20.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(70, 125.05069)
 
@@ -435,23 +432,8 @@ size = Vector2(70, 125.05069)
 tile_map_data = PackedByteArray("AAABAAAAAAAkABQAAAAEAAAAAAAkABQAAAAGAAAAAAAkABQAAAAJAAAAAAAkABQAAAAMAAAAAAAkABQAAAAPAAAAAAAkABQAAAASAAAAAAAkABQAAAAVAAAAAAAkABQAAAAZAAAAAAAkABQAAAAYAAAAAAAkABQAAAAcAAAAAAAkABQAAAAfAAAAAAAkABQAAAAiAAAAAAAkABQAAAAlAAAAAAAkABQAAAAoAAAAAAAkABQAAAApAAAAAAAkABQAAAAqAAAAAAAkABQAAAArAAAAAAAkABQAAAAsAAAAAAAkABQAAAAvAAAAAAAkABQAAAAyAAAAAAAkABQAAAAzAAAAAAAkABQAAAA0AAAAAAAkABQAAAA1AAAAAAAkABQAAAA2AAAAAAAkABQAAAA3AAAAAAAkABQAAAA4AAAAAAAkABQAAAA5AAAAAAAkABQAAAA6AAAAAAAkABQAAAA7AAAAAAAkABQAAAA8AAAAAAAkABQAAAA9AAAAAAAkABQAAAA+AAAAAAAkABQAAAA/AAAAAAAkABQAAABAAAAAAAAkABQAAABBAAAAAAAkABQAAABCAAAAAAAkABQAAABDAAAAAAAkABQAAABEAAAAAAAkABQAAABHAAAAAAAkABQAAABKAAAAAAAkABQAAABNAAAAAAAkABQAAABQAAAAAAAkABQAAABTAAAAAAAkABQAAABWAAAAAAAkABQAAABZAAAAAAAkABQAAABcAAAAAAAkABQAAABfAAAAAAAkABQAAAA=")
 tile_set = SubResource("TileSet_d21ai")
 
-[node name="player" type="CharacterBody2D" parent="."]
+[node name="player" parent="." instance=ExtResource("3_kdubu")]
 position = Vector2(6, -9)
-script = ExtResource("2_0hol4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(116.25, -5.749996)
-shape = SubResource("RectangleShape2D_rj586")
-
-[node name="Sprite2D" type="Sprite2D" parent="player"]
-position = Vector2(116.250015, -5.749998)
-scale = Vector2(0.17578125, 0.16015626)
-texture = ExtResource("3_q6r6c")
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(116, -40)
-zoom = Vector2(4.74, 4.74)
-limit_left = 0
 
 [node name="city" type="Parallax2D" parent="."]
 z_index = -2

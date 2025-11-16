@@ -4,8 +4,9 @@ extends CharacterBody2D
 const SPEED = 200.0
 const JUMP_VELOCITY = -200.0
 @onready var uis: Control = $"../uis"
-var cutsceneTriggered = false
 
+@onready var ap= $AnimationPlayer
+@onready var sprite = $Sprite2D
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -19,8 +20,10 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
+		ap.play("MC_idle")
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		ap.play("RESET")
 
 	move_and_slide()
